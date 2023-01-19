@@ -9,3 +9,5 @@ for number in range(0, 6):
     print(number)
 for number in range(10, 15):
     print(number)
+for number in range(0,10,2):
+    print(number)
