@@ -5,4 +5,7 @@ for letter in var:
 var2 = ["monday","tuesday","wednesday","thursday","friday","saturday","sunday"]
 for day in var2:
     print(day)
-print(9)
+for number in range(0, 6):
+    print(number)
+for number in range(10, 15):
+    print(number)
