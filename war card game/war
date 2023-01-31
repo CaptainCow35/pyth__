@@ -1,36 +1,45 @@
 import random
 
-deck = list(range (2,15)) * 4
+deck = list(range(2, 15)) * 4
 random.shuffle(deck)
 p1 = deck[:26]
 p2 = deck[26:]
 pile = []
 
-while len(p1) != 0 or len(p2) != 0:
-
-    p1card =  p1.pop[0]
-    p2card = p2.pop[0]
-    pile.append(p1card)
+def makecards(p1, p2, pile):
+     
+    p2card = p2.pop(0) 
+    p1card = p1.pop(0)
+    pile.append(p1card) 
     pile.append(p2card)
 
+    return p1card, p1card
+   
+
+while len(p1) > 0 or len(p2) > 0:
+    
+    p1card = makecards(p1, p2, pile)[0]
+    p2card = makecards(p1, p2, pile)[1]
+
     print("player one has: " + str(p1card) + "\nplayer two has: " + str(p2card))
-
+    
     if p1card > p2card:
+        print("player one wins")
         p1.extend(pile)
-        p1.extend(pile)
-        print("player one win")
-
-    elif p2card > p1card:
+        pile.clear()
+        
+    elif p1card < p2card:
+        print("player two wins")
         p2.extend(pile)
-        p2.extend(pile)
-        print("player 2 wind")
-    
-    
+        pile.clear()
+        
     elif p1card == p2card:
-
         print("War")
         pile.append(p1.pop(0))
         pile.append(p2.pop(0))
+        
+    
+    
         
 
 
